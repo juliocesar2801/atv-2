@@ -1,0 +1,22 @@
+select * from livros WHERE disponivel = true;
+
+select * from livros WHERE editora = 'HarperCollins';
+
+select * from livros WHERE ano_publicacao BETWEEN 2000 AND 2010;
+
+select autor, COUNT() AS num_livros 
+from livros 
+GROUP BY autor 
+HAVING COUNT() > 3;
+
+select * from livros WHERE titulo LIKE '%Senhor%';
+
+select * from livros WHERE categoria IN ('Fantasia', 'Ficção Científica', 'Fábula');
+
+select DISTINCT idioma FROM livros;
+
+select * from livros WHERE numero_paginas BETWEEN 200 AND 400;
+
+select EXISTS(SELECT * FROM livros WHERE categoria = 'História') AS existe_historia;
+
+select titulo, ano_publicacao FROM livros ORDER BY ano_publicacao;
